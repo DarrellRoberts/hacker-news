@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* background-color: black; */
+  height: 100vh;
+}
+
+header {
+  background-color: #ff6600;
+  display:inline-flex;
+  align-items: space-between;
+  height: 5%;
+}
+
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  color: #FFF;
+  border-style: solid;
+  border-color: #FFF;
+  padding: 0.5%;
+  margin: 3%;
+  font-size: 1rem;
+}
+
+.hacker-news {
+  width: 15rem;
+  font-size: 1.5rem;
+}
+
+.header-left ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 30rem;
+}
+
+.header-left ul a {
+  text-decoration: none;
+  color: black;
+
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50rem;
+  list-style: none;
+  text-decoration: none;
+}
+
+.header-right a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f6f6ef;
+  padding: 20%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-style: solid;
+  border-top-color: #ff6600;
+  border-left-color: #FFF;
+  border-right-color:#FFF;
+  border-bottom-color: #FFF;
+  background-color: #f6f6ef;
+}
+
+.footer-links ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.footer-links ul a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  margin: 0 5%;
+  width: 3rem;
+}
+
+.search-bar {
+}
