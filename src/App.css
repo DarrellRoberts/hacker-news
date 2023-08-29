@@ -1,15 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* background-color: black; */
-  height: 100vh;
+  background-color: black;
+  /* height: 100vh; */
+  margin: 0% 8%;
+  padding: 0%;
 }
 
 header {
   background-color: #ff6600;
   display:inline-flex;
   align-items: space-between;
-  height: 5%;
+  padding: 0px;
 }
 
 .header-left {
@@ -24,12 +26,14 @@ header {
   border-color: #FFF;
   padding: 0.5%;
   margin: 3%;
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
 
 .hacker-news {
   width: 15rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  padding: 0px;
+  margin: 0px;
 }
 
 .header-left ul {
@@ -39,10 +43,14 @@ header {
   width: 30rem;
 }
 
+.header-left h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
 .header-left ul a {
   text-decoration: none;
   color: black;
-
 }
 
 .header-right {
@@ -61,14 +69,20 @@ header {
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   background-color: #f6f6ef;
-  padding: 20%;
+}
+
+main a {
+  text-decoration: none;
+  color: black;
 }
 
 footer {
   display: flex;
   flex-direction: column;
+  justify-self: end;
   align-items: center;
   justify-content: flex-start;
   border-style: solid;

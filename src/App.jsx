@@ -1,7 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
+const [posts, setPosts] = useState({ hits: [] });
+const fetchData = async () => {
+  try {
+    const res = await fetch("https://hn.algolia.com/api/v1/search");
+    const data = await res.json();
+    setPosts(data);
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+useEffect(() => {
+  fetchData();
+  console.log(posts);
+}, []);
 
   return (
     <>
@@ -24,7 +39,14 @@ function App() {
           <a href=""><li>login</li></a>
         </div>
       </header>
-      <main></main>
+      <main>
+        {posts.hits.map((post) => (
+          <div key={post.id}>
+            <ol>
+              <a href={post.url}><span>{post.title} ({post.url})</span></a>
+            </ol>
+        </div>))}
+      </main>
       <footer>
         <div className="footer-links">
         <ul>
@@ -43,7 +65,7 @@ function App() {
           <input type="text" />
         </div>
       </footer>
-    </div>
+      </div>
     </>
   )
 }
