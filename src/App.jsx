@@ -43,7 +43,8 @@ useEffect(() => {
         {posts.hits.map((post) => (
           <div key={post.id}>
             <ol>
-              <a href={post.url}><span>{post.title} ({post.url})</span></a>
+              <a href={post.url} target="_blank" rel="noreferrer"><span>{post.story_text ? post.story_text : post.title} ({post.url})</span></a>
+              <br/><span>{post.points} points by {post.author} hide {post.num_comments} comments </span>
             </ol>
         </div>))}
       </main>
