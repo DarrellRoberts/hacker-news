@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import BounceLoader from "react-spinners/BounceLoader";
 
 function App() {
+  const [Loading, setLoading] = useState(true);
   const [posts, setPosts] = useState({ hits: [] });
   const fetchData = async () => {
+    setLoading(false);
     try {
       const res = await fetch("https://hn.algolia.com/api/v1/search");
       const data = await res.json();
@@ -25,6 +28,7 @@ function App() {
           <div className="header-left">
             <h2 className="logo">Y</h2>
             <h1 className="hacker-news">Hacker News</h1>
+
             <ul>
               <a href="">
                 <li>new</li>
@@ -56,6 +60,15 @@ function App() {
           </div>
         </header>
         <main>
+          <div className="spinner">
+            <BounceLoader
+              color={"#FF6600"}
+              loading={Loading}
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
           {posts.hits.map((post) => (
             <div key={post.id}>
               <ol>

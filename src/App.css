@@ -9,7 +9,7 @@
 
 header {
   background-color: #ff6600;
-  display:inline-flex;
+  display: inline-flex;
   align-items: space-between;
   padding: 0px;
 }
@@ -21,9 +21,9 @@ header {
 }
 
 .logo {
-  color: #FFF;
+  color: #fff;
   border-style: solid;
-  border-color: #FFF;
+  border-color: #fff;
   padding: 0.5%;
   margin: 3%;
   font-size: 0.5rem;
@@ -87,9 +87,9 @@ footer {
   justify-content: flex-start;
   border-style: solid;
   border-top-color: #ff6600;
-  border-left-color: #FFF;
-  border-right-color:#FFF;
-  border-bottom-color: #FFF;
+  border-left-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
   background-color: #f6f6ef;
 }
 
@@ -108,4 +108,12 @@ footer {
 }
 
 .search-bar {
+}
+.spinner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20%;
+  margin-left: 35%;
 }
