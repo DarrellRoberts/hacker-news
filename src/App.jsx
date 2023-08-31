@@ -135,10 +135,6 @@ function App() {
               </a>
             </ul>
           </div>
-          <div className="search-bar">
-            <label>Search:</label>
-            <input type="text" />
-          </div>
         </footer>
       </div>
     </>
