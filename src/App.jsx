@@ -1,26 +1,35 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import PaginatedItems from "./components/Hari";
 import BounceLoader from "react-spinners/BounceLoader";
 import Pranita from "./components/Pranita"
 
 function App() {
   const [Loading, setLoading] = useState(true);
-  const [posts, setPosts] = useState({ hits: [] });
+    const [posts, setPosts] = useState({ hits: [] });
+    const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(10);
+
   const fetchData = async () => {
     setLoading(false);
-    try {
-      const res = await fetch("https://hn.algolia.com/api/v1/search");
-      const data = await res.json();
-      setPosts(data);
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+      try {
+        const res = await fetch("https://hn.algolia.com/api/v1/search");
+        const data = await res.json();
+        setPosts(data);
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  
   useEffect(() => {
-    fetchData();
-    console.log(posts);
-  }, []);
+      fetchData();
+      console.log(posts);
+    }, []);
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = posts.hits.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
@@ -71,7 +80,7 @@ function App() {
               data-testid="loader"
             />
           </div>
-          {posts.hits.map((post) => (
+          {currentPosts.map((post) => (
             <div key={post.id}>
               <ol>
                 <a href={post.url} target="_blank" rel="noreferrer">
@@ -88,6 +97,14 @@ function App() {
               </ol>
             </div>
           ))}
+          <div>
+            <PaginatedItems
+              totalPosts={posts.hits.length}
+              postsPerPage={postsPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
+          </div>
         </main>
         <footer>
           <div className="footer-links">

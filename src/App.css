@@ -119,3 +119,25 @@ footer {
   margin-top: 20%;
   margin-left: 35%;
 }
+
+.pagination {
+  margin-left: 2%;
+  margin-bottom: 0.5%;
+}
+
+.pagination button {
+  cursor: pointer;
+  margin: 0.5%;
+  padding: 0.25% 0.5%;
+  background-color: white;
+  border: 1px solid #ff6600;
+}
+
+.pagination button:hover {
+  background-color: lightgray;
+}
+
+.pagination button.active {
+  background-color: #ff6600;
+  color: white;
+}
