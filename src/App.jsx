@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
+
 const [posts, setPosts] = useState({ hits: [] });
 const fetchData = async () => {
   try {
@@ -18,6 +19,10 @@ useEffect(() => {
   console.log(posts);
 }, []);
 
+const liNum = (i) => {
+  i = 0;
+  return i++; 
+}
   return (
     <>
     <div className="container">
@@ -43,8 +48,10 @@ useEffect(() => {
         {posts.hits.map((post) => (
           <div key={post.id}>
             <ol>
-              <a href={post.url} target="_blank" rel="noreferrer"><span>{post.story_text ? post.story_text : post.title} ({post.url})</span></a>
-              <br/><span>{post.points} points by {post.author} hide {post.num_comments} comments </span>
+              <li>
+                <a href={post.url} target="_blank" rel="noreferrer"><span>{post.story_text ? post.story_text : post.title} {post.url ? `(${post.url})` : null}</span></a>
+              <br/><span>{post.points} points by {post.author} | created on: {post.created_at.split("T")[0]} | hide | {post.num_comments} comments </span>
+              </li>
             </ol>
         </div>))}
       </main>
