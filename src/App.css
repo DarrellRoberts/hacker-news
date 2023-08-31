@@ -108,6 +108,8 @@ footer {
 }
 
 .search-bar {
+  display: flex;
+  justify-content: center;
 }
 .spinner {
   position: absolute;

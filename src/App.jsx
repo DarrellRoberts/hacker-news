@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import BounceLoader from "react-spinners/BounceLoader";
+import Pranita from "./components/Pranita"
 
 function App() {
   const [Loading, setLoading] = useState(true);
@@ -60,6 +61,7 @@ function App() {
           </div>
         </header>
         <main>
+          <Pranita/>
           <div className="spinner">
             <BounceLoader
               color={"#FF6600"}
