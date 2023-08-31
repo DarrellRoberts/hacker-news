@@ -19,10 +19,6 @@ useEffect(() => {
   console.log(posts);
 }, []);
 
-const liNum = (i) => {
-  i = 0;
-  return i++; 
-}
   return (
     <>
     <div className="container">
@@ -31,12 +27,12 @@ const liNum = (i) => {
           <h2 className="logo">Y</h2>
           <h1 className="hacker-news">Hacker News</h1>
           <ul>
-          <a href=""><li>new</li></a>
-          <a href=""><li>past</li></a>
-          <a href=""><li>comments</li></a>
-          <a href=""><li>ask</li></a>
-          <a href=""><li>show</li></a>
-          <a href=""><li>jobs</li></a>
+          <a href=""><li>new |</li></a>
+          <a href=""><li>past |</li></a>
+          <a href=""><li>comments |</li></a>
+          <a href=""><li>ask |</li></a>
+          <a href=""><li>show |</li></a>
+          <a href=""><li>jobs |</li></a>
           <a href=""><li>submit</li></a>
           </ul>
         </div>
@@ -45,15 +41,23 @@ const liNum = (i) => {
         </div>
       </header>
       <main>
-        {posts.hits.map((post) => (
-          <div key={post.id}>
-            <ol>
-              <li>
-                <a href={post.url} target="_blank" rel="noreferrer"><span>{post.story_text ? post.story_text : post.title} {post.url ? `(${post.url})` : null}</span></a>
-              <br/><span>{post.points} points by {post.author} | created on: {post.created_at.split("T")[0]} | hide | {post.num_comments} comments </span>
-              </li>
-            </ol>
-        </div>))}
+      {posts.hits.map((post) => (
+            <div key={post.id}>
+              <ol>
+                <li value={posts.hits.indexOf(post) + 1}>
+                <a href={post.url} target="_blank" rel="noreferrer" className="upperPara">
+                  <span>
+                    {post.story_text ? post.story_text : post.title} </span></a> <a href={post.url} target="_blank" rel="noreferrer" className="urlBrackets"> <span> {post.url ? `(${post.url})` : null}
+                  </span>
+                </a>
+                <br />
+                <span className="lowerPara">
+                  {post.points} points by {post.author} | created on: {post.created_at.split("T")[0]} | hide | {post.num_comments} comments
+                </span>
+                </li>
+              </ol>
+            </div>
+          ))}
       </main>
       <footer>
         <div className="footer-links">
@@ -67,10 +71,6 @@ const liNum = (i) => {
           <a href=""><li>Apply to YC</li></a>
           <a href=""><li>Contact</li></a>
           </ul>
-        </div>
-        <div className="search-bar">
-          <label>Search:</label>
-          <input type="text" />
         </div>
       </footer>
       </div>
