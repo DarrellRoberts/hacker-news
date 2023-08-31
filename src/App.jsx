@@ -44,7 +44,7 @@ function App() {
                 <li>new</li>
               </a>
               <a href="">
-                <li>past</li>
+                <li>past </li>
               </a>
               <a href="">
                 <li>comments</li>

@@ -135,9 +135,10 @@ footer {
 .footer-links ul a {
   text-decoration: none;
   color: black;
-  font-size: 1rem;
+  font-size: 0.75rem;;
   margin: 0 5%;
   width: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .search-bar {
