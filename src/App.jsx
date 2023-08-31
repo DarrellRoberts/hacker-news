@@ -80,23 +80,23 @@ function App() {
               data-testid="loader"
             />
           </div>
-          {currentPosts.map((post) => (
+      {currentPosts.map((post) => (
             <div key={post.id}>
               <ol>
-                <a href={post.url} target="_blank" rel="noreferrer">
+                <li value={posts.hits.indexOf(post) + 1}>
+                <a href={post.url} target="_blank" rel="noreferrer" className="upperPara">
                   <span>
-                    {post.story_text ? post.story_text : post.title} ({post.url}
-                    )
+                    {post.story_text ? post.story_text : post.title} </span></a> <a href={post.url} target="_blank" rel="noreferrer" className="urlBrackets"> <span> {post.url ? `(${post.url})` : null}
                   </span>
                 </a>
                 <br />
-                <span>
-                  {post.points} points by {post.author} hide {post.num_comments}{" "}
-                  comments{" "}
+                <span className="lowerPara">
+                  {post.points} points | by {post.author} | created on: {post.created_at.split("T")[0]} | hide | {post.num_comments} comments
                 </span>
+                </li>
               </ol>
             </div>
-          ))}
+          ))} 
           <div>
             <PaginatedItems
               totalPosts={posts.hits.length}

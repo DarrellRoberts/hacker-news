@@ -12,6 +12,7 @@ header {
   display: inline-flex;
   align-items: space-between;
   padding: 0px;
+  height: 1.5rem;
 }
 
 .header-left {
@@ -23,10 +24,12 @@ header {
 .logo {
   color: #fff;
   border-style: solid;
-  border-color: #fff;
-  padding: 0.5%;
+  border-width: 1px;
+  border-color: #FFF;
+  padding: 0.25%;
   margin: 3%;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .hacker-news {
@@ -46,11 +49,14 @@ header {
 .header-left h1 {
   padding: 0px;
   margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header-left ul a {
   text-decoration: none;
   color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
 }
 
 .header-right {
@@ -65,6 +71,8 @@ header {
 .header-right a {
   text-decoration: none;
   color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
 }
 
 main {
@@ -76,7 +84,32 @@ main {
 
 main a {
   text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: black;
+}
+
+main li {
+  color: grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+.upperPara {
+  font-size: 0.85rem;
+}
+
+.lowerPara {
+  color: grey;
+  font-size: 0.75rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.urlBrackets {
+  color: grey;
+  font-size: 0.75rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 footer {
