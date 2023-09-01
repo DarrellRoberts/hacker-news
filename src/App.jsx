@@ -9,7 +9,6 @@ function App() {
   const [posts, setPosts] = useState({ hits: [] });
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
-  const [counter, setPoints] = useState(posts.hits.map((post) => post.points));
 
   const fetchData = async () => {
     setLoading(false);
@@ -31,10 +30,6 @@ function App() {
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = posts.hits.slice(firstPostIndex, lastPostIndex);
-  const incrPoints = () => (
-    setPoints(counter + 1)
-  )
-  
   return (
     <>
       <div className="container">
