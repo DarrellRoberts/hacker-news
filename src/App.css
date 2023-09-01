@@ -175,3 +175,8 @@ footer {
   background-color: #ff6600;
   color: white;
 }
+
+.triangle {
+height: 0.55rem;
+filter: contrast(0);
+}
